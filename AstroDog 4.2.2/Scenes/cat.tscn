@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvbgm4hcjetxq"]
+
+[ext_resource type="Script" path="res://Scripts/cat.gd" id="1_8wyx7"]
+[ext_resource type="Texture2D" uid="uid://cq54it1gwy8t2" path="res://Assets/cat1.png" id="2_4waj3"]
+[ext_resource type="Texture2D" uid="uid://bqlsyaxaj8msv" path="res://Assets/cat2.png" id="3_fjvh2"]
+[ext_resource type="Texture2D" uid="uid://ck3hkrtleil6b" path="res://Assets/cat3.png" id="4_qmvdt"]
+[ext_resource type="Texture2D" uid="uid://cqsqtvxf7w0po" path="res://Assets/cat4.png" id="5_kfpc5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axfn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4waj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fjvh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qmvdt")
+}],
+"loop": true,
+"name": &"idlecat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4waj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fjvh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qmvdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kfpc5")
+}],
+"loop": true,
+"name": &"walkcat",
+"speed": 10.0
+}]
+
+[node name="cat" type="Node2D"]
+script = ExtResource("1_8wyx7")
+
+[node name="AnimatedSprite2Dc" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.140741, 0.140741)
+sprite_frames = SubResource("SpriteFrames_axfn3")
+animation = &"walkcat"

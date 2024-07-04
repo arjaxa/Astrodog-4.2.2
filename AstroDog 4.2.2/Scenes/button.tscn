@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv0erwlhu8m5t"]
+
+[ext_resource type="Script" path="res://Scripts/button.gd" id="1_eyu2g"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Retry"
+script = ExtResource("1_eyu2g")
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]

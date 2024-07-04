@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://wpywxic8fp8g"]
+
+[ext_resource type="Texture2D" uid="uid://dq3c5srexwlfs" path="res://Assets/Shadow.png" id="1_acvtl"]
+[ext_resource type="Texture2D" uid="uid://dl01tmpxqno02" path="res://Assets/star.png" id="1_jqmy1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkglp"]
+radius = 18.0
+
+[node name="Star" type="StaticBody2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.502719, 0.502719, 0.502719, 1)
+position = Vector2(-1, 24)
+scale = Vector2(0.730769, 0.730769)
+texture = ExtResource("1_acvtl")
+
+[node name="Star" type="Sprite2D" parent="."]
+position = Vector2(-27, -63)
+scale = Vector2(0.37037, 0.37037)
+texture = ExtResource("1_jqmy1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_wkglp")

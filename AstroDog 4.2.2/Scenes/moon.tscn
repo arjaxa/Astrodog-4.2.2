@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbhuu1snry3cg"]
+
+[ext_resource type="Texture2D" uid="uid://dq3c5srexwlfs" path="res://Assets/Shadow.png" id="1_e0u8f"]
+[ext_resource type="Texture2D" uid="uid://dk7lsqrdir1rv" path="res://Assets/moon b.png" id="2_w6dda"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkglp"]
+radius = 18.0
+
+[node name="moon" type="StaticBody2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.502719, 0.502719, 0.502719, 1)
+position = Vector2(-1, 24)
+scale = Vector2(0.730769, 0.730769)
+texture = ExtResource("1_e0u8f")
+
+[node name="moon" type="Sprite2D" parent="."]
+position = Vector2(-1, -4.00001)
+scale = Vector2(0.178947, 0.178947)
+texture = ExtResource("2_w6dda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_wkglp")

@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://cfhhip4fe86rq"]
+
+[ext_resource type="Script" path="res://Scripts/dog.gd" id="1_0o7np"]
+[ext_resource type="Texture2D" uid="uid://bu0fv0okrpo8k" path="res://Assets/idle1.png" id="1_tgaix"]
+[ext_resource type="Texture2D" uid="uid://dej8a0w2jjy2o" path="res://Assets/idle2.png" id="2_xn8jg"]
+[ext_resource type="Texture2D" uid="uid://7qx6yqaliycr" path="res://Assets/w1.png" id="3_trmul"]
+[ext_resource type="Texture2D" uid="uid://co5vlocb08dh0" path="res://Assets/w2.png" id="4_pbaha"]
+[ext_resource type="Texture2D" uid="uid://bw5boqu0q3stx" path="res://Assets/w3.png" id="5_ma5ck"]
+[ext_resource type="Texture2D" uid="uid://bmma7qldf4w5f" path="res://Assets/w4.png" id="6_t0akb"]
+[ext_resource type="Texture2D" uid="uid://bo7p05wy4fr5s" path="res://Assets/w5.png" id="7_fuoqs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ao6s5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tgaix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xn8jg")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_trmul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pbaha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ma5ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t0akb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fuoqs")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="Dog" type="Node2D"]
+script = ExtResource("1_0o7np")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.240741, 0.240741)
+sprite_frames = SubResource("SpriteFrames_ao6s5")
+animation = &"walk"
+speed_scale = 1.3

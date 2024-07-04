@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpsjm7gf1ypde"]
+
+[ext_resource type="Texture2D" uid="uid://dq3c5srexwlfs" path="res://Assets/Shadow.png" id="1_8ift5"]
+[ext_resource type="Texture2D" uid="uid://d0c4hblyqvbxx" path="res://Assets/jet.png" id="2_aq2w5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkglp"]
+radius = 27.2947
+
+[node name="jet" type="StaticBody2D"]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.502719, 0.502719, 0.502719, 1)
+position = Vector2(14.1539, 27)
+scale = Vector2(1.09158, 0.846154)
+texture = ExtResource("1_8ift5")
+
+[node name="jet" type="Sprite2D" parent="."]
+position = Vector2(-8, -15)
+scale = Vector2(0.118118, 0.118118)
+texture = ExtResource("2_aq2w5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 16)
+shape = SubResource("CircleShape2D_wkglp")

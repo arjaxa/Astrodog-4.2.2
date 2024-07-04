@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0r0jonwr7ia5"]
+
+[ext_resource type="Texture2D" uid="uid://c5nves55mcdgr" path="res://Assets/projectile.png" id="1_8rodm"]
+
+[sub_resource type="GDScript" id="GDScript_58mbc"]
+script/source = "extends Area2D
+
+var traveled_distance = 0
+
+func _physics_process(delta):
+	const SPEED = 1000
+	const RANGE = 1200
+	
+	var direction = Vector2.RIGHT.rotated(rotation)
+	position += direction * SPEED * delta
+	
+	traveled_distance += SPEED * delta
+	if traveled_distance > RANGE:
+		queue_free()
+
+
+func _on_body_entered(body):
+	queue_free()
+	if body.has_method(\"take_damage\"):
+		body.take_damage()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ymnsn"]
+radius = 17.72
+
+[node name="Bullet" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = SubResource("GDScript_58mbc")
+
+[node name="Projectile" type="Sprite2D" parent="."]
+position = Vector2(-11, -1)
+texture = ExtResource("1_8rodm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ymnsn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

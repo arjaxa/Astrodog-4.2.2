@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3 uid="uid://csip7cfyucudk"]
+
+[ext_resource type="Script" path="res://Scripts/game.gd" id="1_htafa"]
+[ext_resource type="PackedScene" uid="uid://blb31imsbjowp" path="res://Scenes/player.tscn" id="1_r3bv3"]
+[ext_resource type="PackedScene" uid="uid://wpywxic8fp8g" path="res://Scenes/star.tscn" id="2_3ceww"]
+[ext_resource type="PackedScene" uid="uid://dbhuu1snry3cg" path="res://Scenes/moon.tscn" id="4_8u586"]
+[ext_resource type="PackedScene" uid="uid://cpsjm7gf1ypde" path="res://Scenes/jet.tscn" id="5_vlyxl"]
+
+[sub_resource type="Curve2D" id="Curve2D_16kab"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -430, -343, 0, 0, 0, 0, 2015, -339, 0, 0, 0, 0, 2015, -339, 0, 0, 0, 0, 2022, 1140, 0, 0, 0, 0, 2022, 1140, 24.9452, -14.2544, -24.9452, 14.2544, -419, 1133, 0, 0, 0, 0, -430, -339)
+}
+point_count = 7
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_htafa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -40
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1157.0
+offset_bottom = 652.0
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_r3bv3")]
+position = Vector2(566, 401)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-566, -401)
+curve = SubResource("Curve2D_16kab")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-430, -343)
+rotation = 0.00163599
+
+[node name="Star" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(130, 541)
+
+[node name="Star2" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1040, 89)
+
+[node name="Star3" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(819, 558)
+
+[node name="Star4" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(308, 301)
+
+[node name="Star5" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(66, 95)
+
+[node name="Star6" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(732, 52)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.215686)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 156
+text = "R.I.P"
+
+[node name="moon" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(949, -99)
+
+[node name="jet" parent="." instance=ExtResource("5_vlyxl")]
+position = Vector2(1032, 561)
+
+[node name="moon2" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(-232, 342)
+
+[node name="moon3" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(-260, 907)
+
+[node name="moon4" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(1816, 739)
+
+[node name="jet2" parent="." instance=ExtResource("5_vlyxl")]
+position = Vector2(-333, -188)
+
+[node name="moon5" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(1892, -115)
+
+[node name="moon6" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(1143, 1072)
+
+[node name="Star7" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-314, 606)
+
+[node name="Star8" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-336, 79)
+
+[node name="Star9" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(210, 733)
+
+[node name="Star10" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(346, -217)
+
+[node name="Star11" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(363, 1036)
+
+[node name="Star12" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(243, 1064)
+
+[node name="Star13" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1819, 948)
+
+[node name="Star14" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1743, 192)
+
+[node name="Star15" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1479, 476)
+
+[node name="Star16" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1187, 796)
+
+[node name="Star17" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1627, 520)
+
+[node name="Star18" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1491, -312)
+
+[node name="Star19" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-881, 768)
+
+[node name="Star20" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-717, 348)
+
+[node name="Star21" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-1109, 144)
+
+[node name="Star22" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(-517, 1288)
+
+[node name="Star23" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(795, 1448)
+
+[node name="Star24" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(2303, 388)
+
+[node name="Star25" parent="." instance=ExtResource("2_3ceww")]
+position = Vector2(1815, 1496)
+
+[node name="moon7" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(-861, 968)
+
+[node name="moon8" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(-837, -268)
+
+[node name="moon9" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(179, -440)
+
+[node name="moon10" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(2295, 1376)
+
+[node name="moon11" parent="." instance=ExtResource("4_8u586")]
+position = Vector2(1803, -448)
+
+[node name="jet3" parent="." instance=ExtResource("5_vlyxl")]
+position = Vector2(-729, 1168)
+
+[node name="jet4" parent="." instance=ExtResource("5_vlyxl")]
+position = Vector2(1703, -232)
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
